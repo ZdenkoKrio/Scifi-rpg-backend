@@ -15,3 +15,5 @@ Herné mechaniky a slučky
 
 ## **📌 Čo ďalej?**
 Ak chceš pridávať **unikátne efekty pre zbrane** alebo **špeciálne vlastnosti pre brnenia**, môžeme rozšíriť modely. Daj mi vedieť, ak chceš pridať nejaké ďalšie funkcie. 🚀
+
+pridat teraformaciu, system vyskumu, system diplomacie, system ekonomiky, system tazby
