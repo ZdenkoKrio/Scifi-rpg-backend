@@ -1,0 +1,21 @@
+1. Výber technológií
+	•	Django + Django REST Framework (DRF) – umožní vytvárať robustné a škálovateľné API.
+	•	PostgreSQL – vhodná relačná databáza pre komplexnú RPG hru.
+	•	Redis + Celery – pre úlohy na pozadí (napr. aktualizácie ekonomiky, asynchrónne operácie).
+	•	JWT (JSON Web Token) – pre autentifikáciu hráčov a ochranu API.
+
+	backend/
+│── game/
+│   ├── models.py      # Herné modely
+│   ├── views.py       # API endpointy
+│   ├── serializers.py # Serializácia dát
+│   ├── urls.py        # Cesty API
+│   ├── tasks.py       # Úlohy na pozadí
+│   ├── signals.py     # Signály pre automatické operácie
+│   ├── services.py    # Herná logika (obchod, boje...)
+│── users/
+│   ├── models.py      # Hráči a profily
+│   ├── authentication.py # JWT login/register
+│── settings.py        # Konfigurácia
+│── requirements.txt   # Závislosti
+│── manage.py          # Django CLI

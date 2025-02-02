@@ -1,0 +1,11 @@
+Herné mechaniky a slučky
+	1.	Prieskum galaxie – Hráč objavuje planéty, vesmírne stanice a vraky lodí, kde môže nájsť zdroje, technológiu alebo NPC postavy.
+	2.	Manažment lode – Vylepšovanie motorov, zbraní, štítov a ďalších modulov na prežitie v neznámej galaxii.
+	3.	Posádka a interakcie – Získavanie NPC členov posádky, každá postava má vlastné schopnosti a príbeh.
+	4.	Obchod a crafting – Možnosť obchodovať so surovinami, vytvárať upgrady a opravovať loď.
+	5.	Bojový systém – Boje vo vesmíre (taktické boje medzi loďami) a boje na planétach (napríklad súboj na blízko alebo prestrelky).
+	6.	Diplomacia a voľby – Rozhodnutia ovplyvňujúce príbeh, aliancie, vzťahy s rôznymi frakciami.
+	7.	Hlavný príbeh – Cesta domov cez rôzne sektory galaxie s postupným odhaľovaním histórie tejto oblasti.
+	8.	Morálny systém – Hráč môže byť hrdina, neutrálna postava alebo vesmírny pirát.
+	9.	Energetický manažment – Správa paliva, zásob kyslíka, spotreby energie v rámci lode.
+	10.	Rôzne štýly hrania – Hráč môže byť obchodník, bojovník, diplomat, prieskumník.
