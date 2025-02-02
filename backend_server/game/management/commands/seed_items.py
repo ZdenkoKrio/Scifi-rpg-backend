@@ -1,5 +1,6 @@
 from django.core.management.base import BaseCommand
-from game.models import Weapon, Armor, Item, PlayerItem
+from game.models.items import Weapon, Armor, Item
+from game.models.player import PlayerItem
 from django.contrib.auth.models import User
 
 
