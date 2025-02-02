@@ -14,7 +14,7 @@ class NPC(models.Model):
         ("ally", "Ally"),
     ])
     level = models.IntegerField(default=1)
-    fraction = models.CharField(max_length=100, blank=True, null=True)  # Optional fraction affiliation
+    faction = models.CharField(max_length=100, blank=True, null=True)  # Optional faction affiliation
     dialogue = models.TextField(blank=True)  # Stores dialogue or quest text
     reputation_effect = models.IntegerField(default=0)  # Effect on player's reputation when interacting
 

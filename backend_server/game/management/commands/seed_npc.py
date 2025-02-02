@@ -10,11 +10,11 @@ class Command(BaseCommand):
         self.stdout.write("Seeding database with NPCs...")
 
         npc_data = [
-            {"name": "Trader Xell", "role": "merchant", "fraction": "Galactic Trade Union", "dialogue": "I have the best deals in the galaxy!", "reputation_effect": 5},
-            {"name": "Captain Raze", "role": "pirate", "fraction": "Void Pirates", "dialogue": "Hand over your cargo, or else!", "reputation_effect": -10},
-            {"name": "Officer Lyn", "role": "officer", "fraction": "Galactic Federation", "dialogue": "We are watching you, citizen.", "reputation_effect": 3},
-            {"name": "Doctor Yara", "role": "scientist", "fraction": None, "dialogue": "Science is the key to our survival.", "reputation_effect": 0},
-            {"name": "Bounty Hunter Kreel", "role": "bounty_hunter", "fraction": "Independent", "dialogue": "You have a price on your head.", "reputation_effect": -5},
+            {"name": "Trader Xell", "role": "merchant", "faction": "Galactic Trade Union", "dialogue": "I have the best deals in the galaxy!", "reputation_effect": 5},
+            {"name": "Captain Raze", "role": "pirate", "faction": "Void Pirates", "dialogue": "Hand over your cargo, or else!", "reputation_effect": -10},
+            {"name": "Officer Lyn", "role": "officer", "faction": "Galactic Federation", "dialogue": "We are watching you, citizen.", "reputation_effect": 3},
+            {"name": "Doctor Yara", "role": "scientist", "faction": None, "dialogue": "Science is the key to our survival.", "reputation_effect": 0},
+            {"name": "Bounty Hunter Kreel", "role": "bounty_hunter", "faction": "Independent", "dialogue": "You have a price on your head.", "reputation_effect": -5},
         ]
 
         for npc in npc_data:
