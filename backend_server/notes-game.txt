@@ -9,3 +9,9 @@ Herné mechaniky a slučky
 	8.	Morálny systém – Hráč môže byť hrdina, neutrálna postava alebo vesmírny pirát.
 	9.	Energetický manažment – Správa paliva, zásob kyslíka, spotreby energie v rámci lode.
 	10.	Rôzne štýly hrania – Hráč môže byť obchodník, bojovník, diplomat, prieskumník.
+
+
+
+
+## **📌 Čo ďalej?**
+Ak chceš pridávať **unikátne efekty pre zbrane** alebo **špeciálne vlastnosti pre brnenia**, môžeme rozšíriť modely. Daj mi vedieť, ak chceš pridať nejaké ďalšie funkcie. 🚀
