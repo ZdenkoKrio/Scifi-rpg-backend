@@ -1,12 +1,21 @@
 from django.contrib.auth.models import User
 from django.db import models
+from items import Weapon, Armor
+
+
+CLASS_CHOICES = [
+        ("void_ranger", "Void Ranger"),
+        ("cyber_warrior", "Cyber Warrior"),
+        ("hacker", "Hacker"),
+        ("pilot", "Pilot"),
+    ]
 
 
 class Player(models.Model):
     """Represents a player's game-related attributes."""
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="player")
     level = models.IntegerField(default=1)
-    class_type = models.CharField(max_length=50, default="Void Ranger")
+    class_type = models.CharField(max_length=50, choices=CLASS_CHOICES, default="void_ranger")
     hp = models.IntegerField(default=240)
     max_hp = models.IntegerField(default=300)
     energy = models.IntegerField(default=80)
@@ -23,8 +32,8 @@ class Player(models.Model):
     experience = models.IntegerField(default=3500)
     next_level_exp = models.IntegerField(default=5000)
 
-    equipped_weapon = models.ForeignKey("Weapon", on_delete=models.SET_NULL, null=True, blank=True)
-    equipped_armor = models.ForeignKey("Armor", on_delete=models.SET_NULL, null=True, blank=True)
+    equipped_weapon = models.ForeignKey(Weapon, on_delete=models.SET_NULL, null=True, blank=True)
+    equipped_armor = models.ForeignKey(Armor, on_delete=models.SET_NULL, null=True, blank=True)
 
     fights_won = models.IntegerField(default=0)
     fights_lost = models.IntegerField(default=0)
@@ -38,4 +47,4 @@ class Player(models.Model):
         return 0
 
     def __str__(self):
-        return f"{self.user.username} (Level {self.level})"
+        return f"{self.user.username} (Level {self.level}, {self.get_class_type_display()})"

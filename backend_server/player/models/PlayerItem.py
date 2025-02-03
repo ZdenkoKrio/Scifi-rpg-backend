@@ -1,6 +1,6 @@
 from django.db import models
 from .Player import Player
-from ..items import Item
+from items import Item
 
 
 class PlayerItem(models.Model):
