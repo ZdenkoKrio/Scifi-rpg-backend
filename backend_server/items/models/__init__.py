@@ -1,12 +1,18 @@
 """
-This package contains the core models for items and inventory in the game.
+Package for item models in the game.
 
-Modules:
-- Item: Base model for all items in the game.
-- Weapon: A subclass of Item representing weapons with critical hit properties.
-- Armor: A subclass of Item representing armor with defensive properties.
+This package contains:
+- `ITEM_RARITIES` (list of available rarities)
+- `RARITY_DESCRIPTIONS` (dictionary of rarity descriptions) -- non-actual
+- `Item` (abstract base class)
+- `Weapon`
+- `Armor`
+- `Jewelry` (rare collectibles)
+- `QuestItem` (mission-related items)
 """
 
-from .Item import Item
+from .Item import Item, ITEM_RARITIES  #, RARITY_DESCRIPTIONS
 from .Weapon import Weapon
 from .Armor import Armor
+from .Jewelry import Jewelry
+from .QuestItem import QuestItem

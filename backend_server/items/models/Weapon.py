@@ -9,4 +9,4 @@ class Weapon(Item):
     critical_damage_bonus = models.FloatField(default=50.0)
 
     def __str__(self):
-        return f"{self.name} (DMG: {self.base_damage}, Crit: {self.critical_damage_bonus}%)"
+        return f"{self.name} (DMG: {self.base_damage}, Crit: {self.critical_chance}% / +{self.critical_damage_bonus}% DMG)"
