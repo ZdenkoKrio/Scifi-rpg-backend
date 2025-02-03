@@ -39,6 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "users",
     "game",
+    "ship",
+    "space",
+    "player",
+    "npc",
+    "items",
+    "diplomation",
+    "economy",
+    "research",
 ]
 
 MIDDLEWARE = [

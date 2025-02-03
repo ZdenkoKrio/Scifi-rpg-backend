@@ -1,4 +1,4 @@
-from django.contrib import admin
+"""from django.contrib import admin
 from .models import (
     Player, Weapon, Armor, Skill, PlayerSkill,
     ResistanceType, PlayerResistance,
@@ -72,3 +72,4 @@ class ItemAdmin(admin.ModelAdmin):
 class PlayerInventoryAdmin(admin.ModelAdmin):
     list_display = ("player", "item", "quantity")
     search_fields = ("player__username", "item__name")
+"""
