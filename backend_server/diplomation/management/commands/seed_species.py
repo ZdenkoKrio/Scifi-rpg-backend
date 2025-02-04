@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
-from diplomation import Species
-from space import Planet
+from diplomation.models import Species
+from space.models import Planet
 
 
 class Command(BaseCommand):

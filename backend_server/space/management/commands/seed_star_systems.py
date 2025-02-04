@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
-from space import StarSystem
-from diplomation import Faction
+from space.models import StarSystem
+from diplomation.models import Faction
 import random
 
 

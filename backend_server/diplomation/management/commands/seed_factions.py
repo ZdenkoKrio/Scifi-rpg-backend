@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from diplomation import Faction
+from diplomation.models import Faction
 
 
 class Command(BaseCommand):

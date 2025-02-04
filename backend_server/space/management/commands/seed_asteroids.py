@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from space import StarSystem, Asteroid
+from space.models import StarSystem, Asteroid
 import random
 
 
@@ -20,6 +20,7 @@ class Command(BaseCommand):
                     star_system=system,
                     is_mining_site=random.choice([True, False]),
                     has_pirate_activity=random.choice([True, False]),
+                    size=random.randint(3000, 50000)
                 )
                 asteroid_count += 1
 

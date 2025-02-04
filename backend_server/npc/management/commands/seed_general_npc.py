@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
-from npc import NPC
-from diplomation import Faction
+from npc.models import NPC
+from diplomation.models import Faction
 
 
 class Command(BaseCommand):

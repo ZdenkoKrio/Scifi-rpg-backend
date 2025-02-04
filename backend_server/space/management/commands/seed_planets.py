@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from space import StarSystem, Planet
+from space.models import StarSystem, Planet
 import random
 
 ATMOSPHERE_TYPES = ["breathable", "toxic", "none"]
@@ -24,6 +24,7 @@ class Command(BaseCommand):
                     atmosphere_type=random.choice(ATMOSPHERE_TYPES),
                     population=random.randint(0, 1000000000),
                     economy_type=random.choice(ECONOMY_TYPES) if random.random() > 0.2 else None,
+                    size=random.randint(3000, 50000),
                 )
                 planet_count += 1
 

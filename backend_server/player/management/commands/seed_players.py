@@ -1,8 +1,8 @@
 from django.core.management.base import BaseCommand
 from django.contrib.auth.models import User
-from player import Player, PlayerItem, Reputation, Resistance, Skill
-from items import Item
-from diplomation import Faction
+from player.models import Player, PlayerItem, Reputation, Resistance, Skill
+from items.models import QuestItem
+from diplomation.models import Faction
 
 
 class Command(BaseCommand):
@@ -20,15 +20,31 @@ class Command(BaseCommand):
         player2 = Player.objects.create(user=user2, level=3, class_type="pilot", credits=750, experience=1500)
         player3 = Player.objects.create(user=user3, level=7, class_type="hacker", credits=2000, experience=4000)
 
-        medkit = Item.objects.create(name="MedKit", item_type="consumable", description="Restores 50 HP", value=100)
-        shield_booster = Item.objects.create(name="Shield Booster", item_type="misc", description="Increases shield capacity by 20%", value=200)
+        medkit = QuestItem.objects.create(
+            name="MedKit",
+            rarity="common",
+            description="Restores 50 HP",
+            value=100,
+            quest_name="First Aid Training",
+            is_consumed=True
+        )
+        stimpack = QuestItem.objects.create(
+            name="Stimpack",
+            rarity="uncommon",
+            description="Temporarily boosts agility by 20% for 5 minutes.",
+            value=250,
+            quest_name="Survival Training",
+            is_consumed=True
+        )
 
         PlayerItem.objects.create(player=player1, item=medkit, quantity=3, is_equipped=False)
-        PlayerItem.objects.create(player=player2, item=shield_booster, quantity=2, is_equipped=False)
+        PlayerItem.objects.create(player=player2, item=stimpack, quantity=2, is_equipped=False)
         PlayerItem.objects.create(player=player3, item=medkit, quantity=1, is_equipped=False)
 #TODO upravi k existujucim frakciam
-        federation, _ = Faction.objects.get_or_create(name="Galactic Federation", description="A union of planets.")
-        pirates, _ = Faction.objects.get_or_create(name="Void Pirates", description="A group of space bandits.")
+        federation, _ = Faction.objects.get_or_create(name="Galactic Federation",
+                                                      defaults={"description": "A union of planets."})
+        pirates, _ = Faction.objects.get_or_create(name="Void Pirates",
+                                                   defaults={"description": "A group of space bandits."})
 
         Reputation.objects.create(player=player1, faction=federation, value=50)
         Reputation.objects.create(player=player1, faction=pirates, value=-10)

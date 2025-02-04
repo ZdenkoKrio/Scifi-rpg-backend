@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from ship import Ship, ShipArmor, ShipWeapon, ShipUpgrade
+from ship.models import Ship, ShipArmor, ShipWeapon, ShipUpgrade
 
 
 class Command(BaseCommand):
@@ -35,4 +35,3 @@ class Command(BaseCommand):
             ShipUpgrade.objects.create(**upgrade)
 
         self.stdout.write(self.style.SUCCESS("Successfully seeded ship equipment!"))
-        

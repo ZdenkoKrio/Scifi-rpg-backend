@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from ship import Ship, ShipCrew
+from ship.models import Ship, ShipCrew
 
 
 class Command(BaseCommand):
@@ -23,4 +23,3 @@ class Command(BaseCommand):
             ShipCrew.objects.create(**crew)
 
         self.stdout.write(self.style.SUCCESS("Successfully seeded ship crew!"))
-        

@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from diplomation import Species, Faction, SpeciesFaction
+from diplomation.models import Species, Faction, SpeciesFaction
 
 
 class Command(BaseCommand):

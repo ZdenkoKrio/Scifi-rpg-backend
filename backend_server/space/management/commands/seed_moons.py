@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from space import Planet, Moon
+from space.models import Planet, Moon
 import random
 
 
@@ -20,6 +20,7 @@ class Command(BaseCommand):
                     planet=planet,
                     composition=random.choice(["rocky", "metallic", "ice"]),
                     resource_richness=random.randint(0, 100),
+                    size=random.randint(3000, 50000),
                 )
                 moon_count += 1
 

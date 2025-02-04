@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from items import Armor
+from items.models import Armor
 
 
 class Command(BaseCommand):

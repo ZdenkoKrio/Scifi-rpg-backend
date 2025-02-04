@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from space import StarSystem, Star
+from space.models import StarSystem, Star
 import random
 
 STAR_TYPES = ["main_sequence", "red_giant", "white_dwarf", "neutron", "black_hole"]

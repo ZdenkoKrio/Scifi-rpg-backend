@@ -10,16 +10,11 @@ This package contains:
 - `Jewelry` (rare collectibles)
 - `QuestItem` (mission-related items)
 """
-from django.apps import apps
-from .Item import ITEM_RARITIES
 
-def get_item_models():
-    return (
-        apps.get_model("items", "Item"),
-        apps.get_model("items", "Weapon"),
-        apps.get_model("items", "Armor"),
-        apps.get_model("items", "Jewelry"),
-        apps.get_model("items", "QuestItem"),
-    )
+from .Item import Item, ITEM_RARITIES
+from .Weapon import Weapon
+from .Armor import Armor
+from .Jewelry import Jewelry
+from .QuestItem import QuestItem
 
-__all__ = ["get_item_models", "ITEM_RARITIES"]
+__all__ = ["Item", "Weapon", "Armor", "Jewelry", "QuestItem", "ITEM_RARITIES"]

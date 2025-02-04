@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 from player.models import Player
-from ship import Ship
+from ship.models import Ship
 
 
 class Command(BaseCommand):
@@ -24,4 +24,3 @@ class Command(BaseCommand):
             Ship.objects.create(**ship_data)
 
         self.stdout.write(self.style.SUCCESS("Successfully seeded ships!"))
-        

@@ -9,7 +9,7 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         self.stdout.write("Seeding all NPCs...")
 
-        call_command("seed_general_npcs")
+        call_command("seed_general_npc")
         call_command("seed_quest_givers")
         call_command("seed_merchants")
 
