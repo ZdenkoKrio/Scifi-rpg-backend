@@ -24,6 +24,5 @@ This package manages all celestial bodies, star systems, and spatial phenomena i
 🚀 *Use the `seed_space` command to populate the galaxy with objects.*
 
 """
-from .models import CelestialBody, StarSystem, Star, Planet, Moon, SpaceStation, Asteroid, Nebula, UnknownObject
 
 

@@ -28,4 +28,3 @@ This package manages factions, species, and their diplomatic relationships.
 - Introduce AI-controlled faction decision-making.
 """
 
-from .models import Faction, Species, SpeciesFaction

@@ -38,11 +38,11 @@ class Player(models.Model):
     missions_completed = models.IntegerField(default=0)
     missions_failed = models.IntegerField(default=0)
 
-    #def calculate_critical_damage(self):
-    #    """Calculates critical damage based on the equipped weapon and player attributes."""
-    #    if self.equipped_weapon:
-    #       return self.equipped_weapon.base_damage * (1 + self.equipped_weapon.critical_damage_bonus / 100)
-    #    return 0
+    def calculate_critical_damage(self):
+        """Calculates critical damage based on the equipped weapon and player attributes."""
+        if self.equipped_weapon:
+           return self.equipped_weapon.base_damage * (1 + self.equipped_weapon.critical_damage_bonus / 100)
+        return 0
 
-    #def __str__(self):
-    #    return f"{self.user.username} (Level {self.level})"
+    def __str__(self):
+        return f"{self.user.username} (Level {self.level})"

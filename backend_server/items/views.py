@@ -1,7 +1,12 @@
 from rest_framework import viewsets
-from .models import Weapon, Armor, Jewelry, QuestItem
+from django.apps import apps
 from .serializers import WeaponSerializer, ArmorSerializer, JewelrySerializer, QuestItemSerializer
 from django.shortcuts import render
+
+Weapon = apps.get_model("items", "Weapon")
+Armor = apps.get_model("items", "Armor")
+Jewelry = apps.get_model("items", "Jewelry")
+QuestItem = apps.get_model("items", "QuestItem")
 
 
 def api_overview(request):

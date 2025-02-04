@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from items.models import Jewelry
+from items import Jewelry
 
 
 class Command(BaseCommand):

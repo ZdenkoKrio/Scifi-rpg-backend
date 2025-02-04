@@ -1,15 +1,17 @@
 from django.db import models
 
 
+SPECIES_TYPES = [
+    ("intelligent", "Intelligent"),
+    ("primitive", "Primitive"),
+    ("animal", "Animal"),
+    ("synthetic", "Synthetic AI"),
+]
+
 class Species(models.Model):
     """Represents a sentient or non-sentient species in the galaxy."""
     name = models.CharField(max_length=100, unique=True)
-    species_type = models.CharField(max_length=50, choices=[
-        ("intelligent", "Intelligent"),
-        ("primitive", "Primitive"),
-        ("animal", "Animal"),
-        ("synthetic", "Synthetic AI"),
-    ])
+    species_type = models.CharField(max_length=50, choices=SPECIES_TYPES)
     homeworld = models.ForeignKey("space.Planet", on_delete=models.SET_NULL, null=True, blank=True, related_name="inhabitants")
     lifespan = models.IntegerField(default=100)  # Average lifespan in years
     average_height = models.FloatField(default=1.8)  # Meters

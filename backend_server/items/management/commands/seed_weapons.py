@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from items.models import Weapon
+from items import Weapon
 
 
 class Command(BaseCommand):

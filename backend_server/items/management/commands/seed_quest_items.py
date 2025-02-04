@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from items.models import QuestItem
+from items import QuestItem
 
 
 class Command(BaseCommand):
