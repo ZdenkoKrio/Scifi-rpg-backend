@@ -9,7 +9,7 @@ from django.shortcuts import render
 
 def api_overview(request):
     """Render the API overview page for the Ship module."""
-    return render(request, "api_overview.html")
+    return render(request, "ship/api_overview.html")
 
 
 class ShipViewSet(viewsets.ModelViewSet):

@@ -6,7 +6,7 @@ from django.shortcuts import render
 
 def api_overview(request):
     """Render the API overview page for the diplomation module."""
-    return render(request, "api_overview.html")
+    return render(request, "diplomation/api_overview.html")
 
 
 class FactionViewSet(viewsets.ModelViewSet):

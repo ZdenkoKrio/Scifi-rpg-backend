@@ -17,4 +17,3 @@ This package manages all in-game items, including weapons, armor, jewelry, and q
 - Quest items are used for mission progress and may be consumable.
 
 """
-
