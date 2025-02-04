@@ -1,22 +1,27 @@
 from django.db import models
-from .StarSystem import StarSystem
-from .CelestialBody import CelestialBody
+from django.core.validators import MinValueValidator, MaxValueValidator
+
+GAS_COMPOSITIONS = [
+    ("hydrogen", "Hydrogen-Rich"),
+    ("ionized", "Ionized Plasma"),
+    ("radioactive", "Radioactive"),
+    ("unknown", "Unknown Composition"),
+]
 
 
-class Nebula(CelestialBody):
+class Nebula(models.Model):
     """Represents a nebula in space, which may contain resources or dangers."""
     name = models.CharField(max_length=100, unique=True)
-    star_system = models.ForeignKey(StarSystem, on_delete=models.CASCADE, related_name="nebulas")
-    size = models.IntegerField(default=500)  # General size metric
-    gas_composition = models.CharField(max_length=100, choices=[
-        ("hydrogen", "Hydrogen-Rich"),
-        ("ionized", "Ionized Plasma"),
-        ("radioactive", "Radioactive"),
-        ("unknown", "Unknown Composition"),
-    ])
-    visibility = models.IntegerField(default=50)  # How difficult it is to navigate (0-100)
-    resource_richness = models.IntegerField(default=0)  # 0 = barren, 100 = rich
-    has_storms = models.BooleanField(default=False)  # If true, traveling through is dangerous
+    coordinates_x = models.IntegerField()
+    coordinates_y = models.IntegerField()
+    coordinates_z = models.IntegerField()
+    gas_composition = models.CharField(max_length=20, choices=GAS_COMPOSITIONS, default="unknown")
+    visibility = models.IntegerField(
+        default=50,
+        validators=[MinValueValidator(0), MaxValueValidator(100)],
+        help_text="0 = completely opaque, 100 = fully visible"
+    )
+    has_storms = models.BooleanField(default=False, help_text="If true, traveling through is dangerous.")
 
     def __str__(self):
-        return f"{self.name} (Nebula) - {self.star_system.name}"
+        return f"{self.name} (Nebula at {self.coordinates_x}, {self.coordinates_y}, {self.coordinates_z})"

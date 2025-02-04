@@ -24,4 +24,5 @@ urlpatterns = [
     path('player/', include("player.urls")),
     path('diplomation/', include("diplomation.urls")),
     path('ship/', include("ship.urls")),
+    path('space/', include("space.urls")),
 ]

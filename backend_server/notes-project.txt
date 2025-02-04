@@ -19,3 +19,5 @@
 │── settings.py        # Konfigurácia
 │── requirements.txt   # Závislosti
 │── manage.py          # Django CLI
+
+-> opravit commands , enums pre atmosphere a osatne
