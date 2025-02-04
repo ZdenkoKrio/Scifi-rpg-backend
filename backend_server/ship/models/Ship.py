@@ -1,17 +1,20 @@
 from django.db import models
-from game.models.player import Player
+from player.models import Player
+
+
+SHIP_TYPES = [
+    ("fighter", "Fighter"),
+    ("freighter", "Freighter"),
+    ("explorer", "Explorer"),
+    ("battleship", "Battleship"),
+]
 
 
 class Ship(models.Model):
     """Represents a player's spaceship with upgradeable attributes."""
     owner = models.ForeignKey(Player, on_delete=models.CASCADE, related_name="ships")
     name = models.CharField(max_length=100, default="Unnamed Ship")
-    ship_type = models.CharField(max_length=50, choices=[
-        ("fighter", "Fighter"),
-        ("freighter", "Freighter"),
-        ("explorer", "Explorer"),
-        ("battleship", "Battleship"),
-    ])
+    ship_type = models.CharField(max_length=50, choices=SHIP_TYPES)
 
     hp = models.IntegerField(default=1000)
     max_hp = models.IntegerField(default=1000)
