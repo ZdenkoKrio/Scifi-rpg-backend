@@ -44,4 +44,3 @@ class Command(BaseCommand):
         skill2, _ = Skill.objects.get_or_create(name="Defensive Mode", effect="Reduces incoming damage by 30%", cooldown=20)
 
         self.stdout.write(self.style.SUCCESS("Successfully seeded database with test players!"))
-        
