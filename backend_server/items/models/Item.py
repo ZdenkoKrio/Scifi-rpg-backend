@@ -1,5 +1,6 @@
 from django.db import models
 
+
 ITEM_RARITIES = [
     ("common", "Common"),
     ("uncommon", "Uncommon"),

@@ -1,3 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def home(request):
+    """Render the home page with API documentation links."""
+    return render(request, "home.html")

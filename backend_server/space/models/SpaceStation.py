@@ -1,7 +1,5 @@
 from django.db import models
 from .CelestialBody import CelestialBody
-from diplomation import Faction
-from .StarSystem import StarSystem
 
 STATION_TYPES = [
     ("trading", "Trading Station"),
@@ -14,12 +12,12 @@ STATION_TYPES = [
 class SpaceStation(CelestialBody):
     """Represents a space station in a star system or free-floating in space."""
     station_type = models.CharField(max_length=20, choices=STATION_TYPES, default="trading")
-    owner_faction = models.ForeignKey(Faction, on_delete=models.SET_NULL, null=True, blank=True)
+    owner_faction = models.ForeignKey("diplomation.Faction", on_delete=models.SET_NULL, null=True, blank=True)
     orbiting_object = models.ForeignKey(
         CelestialBody, on_delete=models.SET_NULL, null=True, blank=True, related_name="orbiting_stations",
         help_text="The celestial body this station orbits (if any)."
     )
-    star_system = models.ForeignKey(StarSystem, on_delete=models.CASCADE, related_name="stations")
+    star_system = models.ForeignKey("StarSystem", on_delete=models.CASCADE, related_name="stations")
 
     def __str__(self):
         if self.orbiting_object:

@@ -18,4 +18,4 @@ This package manages all in-game items, including weapons, armor, jewelry, and q
 
 """
 
-from .models import Item, Weapon, Armor, Jewelry, QuestItem
+from .models import Item, ITEM_RARITIES, Weapon, Armor, Jewelry, QuestItem

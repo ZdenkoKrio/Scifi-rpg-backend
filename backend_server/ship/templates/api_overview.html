@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Ship API Overview{% endblock %}
+{% block heading %}🚀 Ship API Overview{% endblock %}
+
+{% block content %}
+    <p>This page provides an overview of the Ship API and allows you to test GET requests.</p>
+
+    <h2>Available Endpoints:</h2>
+
+    {% include "api_endpoints.html" with base_url="/api/ships/" %}
+
+{% endblock %}

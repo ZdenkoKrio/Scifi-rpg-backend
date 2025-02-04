@@ -1,6 +1,5 @@
 from django.db import models
 from .CelestialBody import CelestialBody
-from .StarSystem import StarSystem
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 STAR_TYPES = [
@@ -14,7 +13,7 @@ STAR_TYPES = [
 
 class Star(CelestialBody):
     """Represents a star at the center of a star system."""
-    star_system = models.OneToOneField(StarSystem, on_delete=models.CASCADE, related_name="star")
+    star_system = models.OneToOneField("StarSystem", on_delete=models.CASCADE, related_name="star")
     star_type = models.CharField(max_length=50, choices=STAR_TYPES, default="main_sequence")
     temperature = models.IntegerField(
         validators=[MinValueValidator(1000), MaxValueValidator(50000)],

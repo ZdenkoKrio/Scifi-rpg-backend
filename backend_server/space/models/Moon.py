@@ -1,11 +1,11 @@
 from django.db import models
 from .CelestialBody import CelestialBody
-from .Planet import Planet, ATMOSPHERE_TYPES
+from .Planet import ATMOSPHERE_TYPES
 
 
 class Moon(CelestialBody):
     """Represents a moon orbiting a planet."""
-    planet = models.ForeignKey(Planet, on_delete=models.CASCADE, related_name="moons")
+    planet = models.ForeignKey("Planet", on_delete=models.CASCADE, related_name="moons")
     atmosphere_type = models.CharField(max_length=20, choices=ATMOSPHERE_TYPES, default="none")
     has_mining_colony = models.BooleanField(default=False)
     has_military_base = models.BooleanField(default=False)

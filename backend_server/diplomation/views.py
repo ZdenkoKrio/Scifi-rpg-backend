@@ -1,6 +1,12 @@
 from rest_framework import viewsets
 from .models import Faction, Species, SpeciesFaction
 from .serializers import FactionSerializer, SpeciesSerializer, SpeciesFactionSerializer
+from django.shortcuts import render
+
+
+def api_overview(request):
+    """Render the API overview page for the diplomation module."""
+    return render(request, "api_overview.html")
 
 
 class FactionViewSet(viewsets.ModelViewSet):

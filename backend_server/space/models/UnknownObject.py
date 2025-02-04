@@ -1,6 +1,5 @@
 from django.db import models
 from .CelestialBody import CelestialBody
-from .StarSystem import StarSystem
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 UNKNOWN_OBJECT_TYPES = [
@@ -15,7 +14,7 @@ UNKNOWN_OBJECT_TYPES = [
 class UnknownObject(CelestialBody):
     """Represents an unknown or mysterious object in space."""
     object_type = models.CharField(max_length=50, choices=UNKNOWN_OBJECT_TYPES, default="anomaly")
-    star_system = models.ForeignKey(StarSystem, on_delete=models.CASCADE, null=True, blank=True, related_name="unknown_objects")
+    star_system = models.ForeignKey("StarSystem", on_delete=models.CASCADE, null=True, blank=True, related_name="unknown_objects")
     coordinates_x = models.FloatField(null=True, blank=True, help_text="X position in the galaxy (if outside a system).")
     coordinates_y = models.FloatField(null=True, blank=True, help_text="Y position in the galaxy (if outside a system).")
     coordinates_z = models.FloatField(null=True, blank=True, help_text="Z position in the galaxy (if outside a system).")

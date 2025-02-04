@@ -1,5 +1,4 @@
 from django.db import models
-from .Player import Player
 
 
 DAMAGE_TYPES = [
@@ -11,7 +10,7 @@ DAMAGE_TYPES = [
 
 class Resistance(models.Model):
     """Represents a player's resistance to different types of damage."""
-    player = models.ForeignKey(Player, on_delete=models.CASCADE, related_name="resistances")
+    player = models.ForeignKey("Player", on_delete=models.CASCADE, related_name="resistances")
     type = models.CharField(max_length=50, choices=DAMAGE_TYPES)
     value = models.IntegerField(default=0)
 

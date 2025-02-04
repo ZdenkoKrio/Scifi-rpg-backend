@@ -2,7 +2,7 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import (
     PlayerViewSet, PlayerItemViewSet,
-    ReputationViewSet, ResistanceViewSet, SkillViewSet
+    ReputationViewSet, ResistanceViewSet, SkillViewSet, api_overview
 )
 
 router = DefaultRouter()
@@ -14,4 +14,5 @@ router.register(r"skills", SkillViewSet)
 
 urlpatterns = [
     path("api/", include(router.urls)),
+    path("api-overview/", api_overview, name="player_api_overview"),
 ]

@@ -1,0 +1,45 @@
+<div class="endpoint">
+    <h3>1️⃣ List all items</h3>
+    <p><strong>Endpoint:</strong> <code>{{ base_url }}</code></p>
+    <p><strong>Method:</strong> GET</p>
+    <pre>
+fetch('{{ base_url }}')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    </pre>
+    <button onclick="fetchData('{{ base_url }}')">Try it!</button>
+</div>
+
+<div class="endpoint">
+    <h3>2️⃣ Retrieve a single item</h3>
+    <p><strong>Endpoint:</strong> <code>{{ base_url }}&lt;id&gt;/</code></p>
+    <p><strong>Method:</strong> GET</p>
+    <pre>
+fetch('{{ base_url }}1/')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    </pre>
+    <input type="number" id="item-id" placeholder="Enter item ID">
+    <button onclick="fetchItem('{{ base_url }}')">Try it!</button>
+</div>
+
+<script>
+    function fetchData(url) {
+        fetch(url)
+            .then(response => response.json())
+            .then(data => alert(JSON.stringify(data, null, 2)))
+            .catch(error => alert("Error fetching data!"));
+    }
+
+    function fetchItem(url) {
+        const id = document.getElementById("item-id").value;
+        if (!id) {
+            alert("Please enter an item ID!");
+            return;
+        }
+        fetch(url + id + "/")
+            .then(response => response.json())
+            .then(data => alert(JSON.stringify(data, null, 2)))
+            .catch(error => alert("Error fetching item!"));
+    }
+</script>

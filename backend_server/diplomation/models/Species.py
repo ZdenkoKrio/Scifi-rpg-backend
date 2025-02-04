@@ -1,5 +1,4 @@
 from django.db import models
-from space import Planet
 
 
 class Species(models.Model):
@@ -11,7 +10,7 @@ class Species(models.Model):
         ("animal", "Animal"),
         ("synthetic", "Synthetic AI"),
     ])
-    homeworld = models.ForeignKey(Planet, on_delete=models.SET_NULL, null=True, blank=True, related_name="inhabitants")
+    homeworld = models.ForeignKey("space.Planet", on_delete=models.SET_NULL, null=True, blank=True, related_name="inhabitants")
     lifespan = models.IntegerField(default=100)  # Average lifespan in years
     average_height = models.FloatField(default=1.8)  # Meters
     description = models.TextField(blank=True)

@@ -2,7 +2,7 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import (
     StarSystemViewSet, StarViewSet, PlanetViewSet, MoonViewSet,
-    SpaceStationViewSet, AsteroidViewSet, NebulaViewSet, UnknownObjectViewSet
+    SpaceStationViewSet, AsteroidViewSet, NebulaViewSet, UnknownObjectViewSet, api_overview
 )
 
 router = DefaultRouter()
@@ -17,4 +17,5 @@ router.register(r'unknown-objects', UnknownObjectViewSet)
 
 urlpatterns = [
     path("api/", include(router.urls)),
+    path("api-overview/", api_overview, name="space_api_overview"),
 ]
