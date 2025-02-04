@@ -22,4 +22,6 @@ urlpatterns = [
     path('items/', include("items.urls")),
     path('npc/', include("npc.urls")),
     path('player/', include("player.urls")),
+    path('diplomation/', include("diplomation.urls")),
+    path('ship/', include("ship.urls")),
 ]
