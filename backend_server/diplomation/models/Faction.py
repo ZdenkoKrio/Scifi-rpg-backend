@@ -1,5 +1,5 @@
 from django.db import models
-from game.models import StarSystem
+from space import StarSystem
 
 
 class Faction(models.Model):

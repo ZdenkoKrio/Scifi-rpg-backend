@@ -1,5 +1,5 @@
 from django.db import models
-from game.models import Planet
+from space import Planet
 
 
 class Species(models.Model):
