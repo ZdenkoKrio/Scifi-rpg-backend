@@ -4,31 +4,25 @@
 {% block heading %}🌌 Welcome to the Scifi RPG API{% endblock %}
 
 {% block content %}
-    <p>This is the API documentation and testing interface for the Scifi RPG backend. Below you will find links to different API modules.</p>
+    <p class="description">This is the API documentation and testing interface for the <strong>Scifi RPG backend</strong>. Below you will find links to different API modules.</p>
 
     <h2>📖 API Modules</h2>
-    
-    <ul>
-        <li>🛠 <a href="{% url 'items_api_overview' %}">Items API</a> - Manage weapons, armor, and consumables.</li>
-        <li>🧑‍🚀 <a href="{% url 'npc_api_overview' %}">NPC API</a> - Interact with merchants, enemies, and quest givers.</li>
-        <li>🎮 <a href="{% url 'player_api_overview' %}">Player API</a> - Manage player stats, inventory, and reputation.</li>
-        <li>🚀 <a href="{% url 'ship_api_overview' %}">Ship API</a> - Manage spaceships, weapons, and crew.</li>
-        <li>🌌 <a href="{% url 'space_api_overview' %}">Space API</a> - Explore star systems, planets, and anomalies.</li>
-    </ul>
+    <ul class="api-list">
+    <li>🛠 <a href="{% url 'items_api_overview' %}">Items API</a> - Manage weapons, armor, and consumables.</li>
+    <li>🧑‍🚀 <a href="{% url 'npc_api_overview' %}">NPC API</a> - Interact with merchants, enemies, and quest givers.</li>
+    <li>🎮 <a href="{% url 'player_api_overview' %}">Player API</a> - Manage player stats, inventory, and reputation.</li>
+    <li>🚀 <a href="{% url 'ship_api_overview' %}">Ship API</a> - Manage spaceships, weapons, and crew.</li>
+    <li>🌌 <a href="{% url 'space_api_overview' %}">Space API</a> - Explore star systems, planets, and anomalies.</li>
+    <li>⚖️ <a href="{% url 'diplomation_api_overview' %}">Diplomation API</a> - Handle factions, alliances, and interstellar politics.</li>
+    <li>💰 <a href="">Economy API</a> - Trade goods, manage credits, and run businesses.</li>
+    <li>🔬 <a href="">Research API</a> - Unlock technologies, develop upgrades, and advance science.</li>
+</ul>
 
     <h2>📡 How to Use</h2>
     <p>Each module provides a testable API overview page where you can interact with different endpoints using GET requests.</p>
 
-    <h2>⚡ Example Request</h2>
-    <p>Fetch all items:</p>
-    <pre>
-fetch('/api/items/')
-    .then(response => response.json())
-    .then(data => console.log(data))
-    </pre>
-
     <h2>🛠 Future Features</h2>
-    <ul>
+    <ul class="features">
         <li>✅ Add authentication and user-specific data.</li>
         <li>✅ Expand the economy and trading system.</li>
         <li>✅ Implement ship combat mechanics.</li>

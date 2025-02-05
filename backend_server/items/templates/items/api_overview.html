@@ -1,13 +1,48 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Items API Overview{% endblock %}
 {% block heading %}🛠 Items API Overview{% endblock %}
 
 {% block content %}
-    <p>This page provides an overview of the Items API and allows you to test GET requests.</p>
+    <p>This page provides an overview of the Items API and allows you to explore available endpoints.</p>
 
-    <h2>Available Endpoints:</h2>
+    <h2>📌 Available Endpoints:</h2>
 
-    {% include "api_endpoints.html" with base_url="/api/items/" %}
+    <div class="api-endpoints">
+        <!-- Weapons -->
+        <div class="endpoint">
+            <h3>🗡 Weapons</h3>
+            <p><strong>List all weapons:</strong> <code>{% url 'weapon-list' %}</code></p>
+            <p><strong>Retrieve a weapon:</strong> <code>{% url 'weapon-detail' pk=1 %}</code></p>
+            <a href="{% url 'weapon-list' %}" target="_blank" class="api-link">🔗 Open Weapons</a>
+        </div>
 
+        <!-- Armor -->
+        <div class="endpoint">
+            <h3>🛡 Armor</h3>
+            <p><strong>List all armors:</strong> <code>{% url 'armor-list' %}</code></p>
+            <p><strong>Retrieve an armor:</strong> <code>{% url 'armor-detail' pk=1 %}</code></p>
+            <a href="{% url 'armor-list' %}" target="_blank" class="api-link">🔗 Open Armors</a>
+        </div>
+
+        <!-- Jewelry -->
+        <div class="endpoint">
+            <h3>💍 Jewelry</h3>
+            <p><strong>List all jewelry:</strong> <code>{% url 'jewelry-list' %}</code></p>
+            <p><strong>Retrieve a jewelry item:</strong> <code>{% url 'jewelry-detail' pk=1 %}</code></p>
+            <a href="{% url 'jewelry-list' %}" target="_blank" class="api-link">🔗 Open Jewelry</a>
+        </div>
+
+        <!-- Quest Items -->
+        <div class="endpoint">
+            <h3>🎯 Quest Items</h3>
+            <p><strong>List all quest items:</strong> <code>{% url 'questitem-list' %}</code></p>
+            <p><strong>Retrieve a quest item:</strong> <code>{% url 'questitem-detail' pk=1 %}</code></p>
+            <a href="{% url 'questitem-list' %}" target="_blank" class="api-link">🔗 Open Quest Items</a>
+        </div>
+    </div>
+
+    <h2>🚀 Full API Browser</h2>
+    <a href="{% url 'api-root' %}" class="api-browser-link">🌍 Open API Explorer</a>
 {% endblock %}

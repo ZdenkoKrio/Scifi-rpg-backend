@@ -1,13 +1,42 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Diplomation API Overview{% endblock %}
-{% block heading %}⚖️ Diplomation API Overview{% endblock %}
+{% block heading %}🛰 Diplomation API Overview{% endblock %}
 
 {% block content %}
-    <p>This page provides an overview of the Diplomation API and allows you to test GET requests.</p>
+    <p>This page provides an overview of the Diplomation API and allows you to explore available endpoints.</p>
 
-    <h2>Available Endpoints:</h2>
+    <h2>📌 Available Endpoints:</h2>
 
-    {% include "api_endpoints.html" with base_url="/api/diplomation/" %}
+    <div class="api-endpoints">
+        <!-- Factions -->
+        <div class="endpoint">
+            <h3>🏛️ Factions</h3>
+            <p><strong>List all factions:</strong> <code>{% url 'faction-list' %}</code></p>
+            <p><strong>Retrieve a faction:</strong> <code>{% url 'faction-detail' pk=1 %}</code></p>
+            <a href="{% url 'faction-list' %}" target="_blank" class="api-link">🔗 Open Factions</a>
+        </div>
+
+        <!-- Species -->
+        <div class="endpoint">
+            <h3>🧬 Species</h3>
+            <p><strong>List all species:</strong> <code>{% url 'species-list' %}</code></p>
+            <p><strong>Retrieve a species:</strong> <code>{% url 'species-detail' pk=1 %}</code></p>
+            <a href="{% url 'species-list' %}" target="_blank" class="api-link">🔗 Open Species</a>
+        </div>
+
+        <!-- Species-Faction Relationships -->
+        <div class="endpoint">
+            <h3>🌍 Species-Faction Relationships</h3>
+            <p><strong>List all species-faction relationships:</strong> <code>{% url 'speciesfaction-list' %}</code></p>
+            <p><strong>Retrieve a species-faction relationship:</strong> <code>{% url 'speciesfaction-detail' pk=1 %}</code></p>
+            <a href="{% url 'speciesfaction-list' %}" target="_blank" class="api-link">🔗 Open Species-Faction Relationships</a>
+        </div>
+    </div>
+
+    <h2>🚀 Full API Browser</h2>
+    <p>You can explore and test all API endpoints via Django REST framework:</p>
+    <a href="{% url 'api-root' %}" class="api-browser-link">🌍 Open API Explorer</a>
 
 {% endblock %}

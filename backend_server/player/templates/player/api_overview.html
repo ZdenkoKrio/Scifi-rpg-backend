@@ -4,10 +4,54 @@
 {% block heading %}🎮 Player API Overview{% endblock %}
 
 {% block content %}
-    <p>This page provides an overview of the Player API and allows you to test GET requests.</p>
+    <p>Welcome to the Player API section. Here you can explore all available endpoints related to players, inventory, reputation, resistance, and skills.</p>
 
-    <h2>Available Endpoints:</h2>
+    <h2>📌 Available Endpoints</h2>
 
-    {% include "api_endpoints.html" with base_url="/api/players/" %}
+    <div class="api-endpoints">
+        <!-- Players -->
+        <div class="endpoint">
+            <h3>👤 Players</h3>
+            <p><strong>List all players:</strong> <code>{% url 'player-list' %}</code></p>
+            <p><strong>Retrieve a single player:</strong> <code>{% url 'player-detail' pk=1 %}</code></p>
+            <a href="{% url 'player-list' %}" target="_blank" class="api-link">🔗 Open Players</a>
+        </div>
+
+        <!-- Player Inventory -->
+        <div class="endpoint">
+            <h3>🎒 Player Inventory</h3>
+            <p><strong>List inventory items:</strong> <code>{% url 'playeritem-list' %}</code></p>
+            <p><strong>Retrieve an inventory item:</strong> <code>{% url 'playeritem-detail' pk=1 %}</code></p>
+            <a href="{% url 'playeritem-list' %}" target="_blank" class="api-link">🔗 Open Inventory</a>
+        </div>
+
+        <!-- Reputation -->
+        <div class="endpoint">
+            <h3>⭐ Reputation</h3>
+            <p><strong>List reputations:</strong> <code>{% url 'reputation-list' %}</code></p>
+            <p><strong>Retrieve a reputation entry:</strong> <code>{% url 'reputation-detail' pk=1 %}</code></p>
+            <a href="{% url 'reputation-list' %}" target="_blank" class="api-link">🔗 Open Reputation</a>
+        </div>
+
+        <!-- Resistance -->
+        <div class="endpoint">
+            <h3>🛡️ Resistance</h3>
+            <p><strong>List resistances:</strong> <code>{% url 'resistance-list' %}</code></p>
+            <p><strong>Retrieve a resistance entry:</strong> <code>{% url 'resistance-detail' pk=1 %}</code></p>
+            <a href="{% url 'resistance-list' %}" target="_blank" class="api-link">🔗 Open Resistance</a>
+        </div>
+
+        <!-- Skills -->
+        <div class="endpoint">
+            <h3>⚡ Skills</h3>
+            <p><strong>List all skills:</strong> <code>{% url 'skill-list' %}</code></p>
+            <p><strong>Retrieve a skill:</strong> <code>{% url 'skill-detail' pk=1 %}</code></p>
+            <a href="{% url 'skill-list' %}" target="_blank" class="api-link">🔗 Open Skills</a>
+        </div>
+    </div>
+
+    <h2>🚀 Full API Browser</h2>
+    <p>You can explore and test all API endpoints via Django REST framework:</p>
+    <a href="{% url 'api-root' %}" class="api-browser-link">🌍 Open API Explorer</a>
 
 {% endblock %}

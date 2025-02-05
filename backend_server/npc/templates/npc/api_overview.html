@@ -1,13 +1,48 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}NPC API Overview{% endblock %}
 {% block heading %}🧑‍🚀 NPC API Overview{% endblock %}
 
 {% block content %}
-    <p>This page provides an overview of the NPC API and allows you to test GET requests.</p>
+    <p>This page provides an overview of the NPC API and allows you to explore available endpoints.</p>
 
-    <h2>Available Endpoints:</h2>
+    <h2>📌 Available Endpoints:</h2>
 
-    {% include "api_endpoints.html" with base_url="/api/npcs/" %}
+    <div class="api-endpoints">
+        <!-- NPC -->
+        <div class="endpoint">
+            <h3>👤 NPCs</h3>
+            <p><strong>List all NPCs:</strong> <code>{% url 'npc-list' %}</code></p>
+            <p><strong>Retrieve an NPC:</strong> <code>{% url 'npc-detail' pk=1 %}</code></p>
+            <a href="{% url 'npc-list' %}" target="_blank" class="api-link">🔗 Open NPCs</a>
+        </div>
 
+        <!-- Merchants -->
+        <div class="endpoint">
+            <h3>🛒 Merchants</h3>
+            <p><strong>List all merchants:</strong> <code>{% url 'merchant-list' %}</code></p>
+            <p><strong>Retrieve a merchant:</strong> <code>{% url 'merchant-detail' pk=1 %}</code></p>
+            <a href="{% url 'merchant-list' %}" target="_blank" class="api-link">🔗 Open Merchants</a>
+        </div>
+
+        <!-- Merchant Inventory -->
+        <div class="endpoint">
+            <h3>📦 Merchant Inventory</h3>
+            <p><strong>List all merchant inventory items:</strong> <code>{% url 'merchantinventory-list' %}</code></p>
+            <p><strong>Retrieve a merchant inventory item:</strong> <code>{% url 'merchantinventory-detail' pk=1 %}</code></p>
+            <a href="{% url 'merchantinventory-list' %}" target="_blank" class="api-link">🔗 Open Merchant Inventory</a>
+        </div>
+
+        <!-- Quest Givers -->
+        <div class="endpoint">
+            <h3>📜 Quest Givers</h3>
+            <p><strong>List all quest givers:</strong> <code>{% url 'questgiver-list' %}</code></p>
+            <p><strong>Retrieve a quest giver:</strong> <code>{% url 'questgiver-detail' pk=1 %}</code></p>
+            <a href="{% url 'questgiver-list' %}" target="_blank" class="api-link">🔗 Open Quest Givers</a>
+        </div>
+    </div>
+
+    <h2>🚀 Full API Browser</h2>
+    <a href="{% url 'api-root' %}" class="api-browser-link">🌍 Open API Explorer</a>
 {% endblock %}

@@ -1,13 +1,56 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Ship API Overview{% endblock %}
 {% block heading %}🚀 Ship API Overview{% endblock %}
 
 {% block content %}
-    <p>This page provides an overview of the Ship API and allows you to test GET requests.</p>
+    <p>This page provides an overview of the Ship API and allows you to explore available endpoints.</p>
 
-    <h2>Available Endpoints:</h2>
+    <h2>📌 Available Endpoints:</h2>
 
-    {% include "api_endpoints.html" with base_url="/api/ships/" %}
+    <div class="api-endpoints">
+        <!-- Ships -->
+        <div class="endpoint">
+            <h3>🚀 Ships</h3>
+            <p><strong>List all ships:</strong> <code>{% url 'ship-list' %}</code></p>
+            <p><strong>Retrieve a ship:</strong> <code>{% url 'ship-detail' pk=1 %}</code></p>
+            <a href="{% url 'ship-list' %}" target="_blank" class="api-link">🔗 Open Ships</a>
+        </div>
 
+        <!-- Ship Armor -->
+        <div class="endpoint">
+            <h3>🛡 Ship Armor</h3>
+            <p><strong>List all ship armors:</strong> <code>{% url 'shiparmor-list' %}</code></p>
+            <p><strong>Retrieve a ship armor:</strong> <code>{% url 'shiparmor-detail' pk=1 %}</code></p>
+            <a href="{% url 'shiparmor-list' %}" target="_blank" class="api-link">🔗 Open Ship Armor</a>
+        </div>
+
+        <!-- Ship Weapons -->
+        <div class="endpoint">
+            <h3>🔫 Ship Weapons</h3>
+            <p><strong>List all ship weapons:</strong> <code>{% url 'shipweapon-list' %}</code></p>
+            <p><strong>Retrieve a ship weapon:</strong> <code>{% url 'shipweapon-detail' pk=1 %}</code></p>
+            <a href="{% url 'shipweapon-list' %}" target="_blank" class="api-link">🔗 Open Ship Weapons</a>
+        </div>
+
+        <!-- Ship Upgrades -->
+        <div class="endpoint">
+            <h3>⚙ Ship Upgrades</h3>
+            <p><strong>List all ship upgrades:</strong> <code>{% url 'shipupgrade-list' %}</code></p>
+            <p><strong>Retrieve a ship upgrade:</strong> <code>{% url 'shipupgrade-detail' pk=1 %}</code></p>
+            <a href="{% url 'shipupgrade-list' %}" target="_blank" class="api-link">🔗 Open Ship Upgrades</a>
+        </div>
+
+        <!-- Ship Crew -->
+        <div class="endpoint">
+            <h3>👨‍🚀 Ship Crew</h3>
+            <p><strong>List all crew members:</strong> <code>{% url 'shipcrew-list' %}</code></p>
+            <p><strong>Retrieve a crew member:</strong> <code>{% url 'shipcrew-detail' pk=1 %}</code></p>
+            <a href="{% url 'shipcrew-list' %}" target="_blank" class="api-link">🔗 Open Ship Crew</a>
+        </div>
+    </div>
+
+    <h2>🚀 Full API Browser</h2>
+    <a href="{% url 'api-root' %}" class="api-browser-link">🌍 Open API Explorer</a>
 {% endblock %}

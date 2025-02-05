@@ -1,13 +1,80 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Space API Overview{% endblock %}
 {% block heading %}🌌 Space API Overview{% endblock %}
 
 {% block content %}
-    <p>This page provides an overview of the Space API and allows you to test GET requests.</p>
+    <p>This page provides an overview of the Space API and allows you to explore available endpoints.</p>
 
-    <h2>Available Endpoints:</h2>
+    <h2>📌 Available Endpoints:</h2>
 
-    {% include "api_endpoints.html" with base_url="/api/space/" %}
+    <div class="api-endpoints">
+        <!-- Star Systems -->
+        <div class="endpoint">
+            <h3>🌟 Star Systems</h3>
+            <p><strong>List all star systems:</strong> <code>{% url 'starsystem-list' %}</code></p>
+            <p><strong>Retrieve a star system:</strong> <code>{% url 'starsystem-detail' pk=1 %}</code></p>
+            <a href="{% url 'starsystem-list' %}" target="_blank" class="api-link">🔗 Open Star Systems</a>
+        </div>
 
+        <!-- Stars -->
+        <div class="endpoint">
+            <h3>☀ Stars</h3>
+            <p><strong>List all stars:</strong> <code>{% url 'star-list' %}</code></p>
+            <p><strong>Retrieve a star:</strong> <code>{% url 'star-detail' pk=1 %}</code></p>
+            <a href="{% url 'star-list' %}" target="_blank" class="api-link">🔗 Open Stars</a>
+        </div>
+
+        <!-- Planets -->
+        <div class="endpoint">
+            <h3>🪐 Planets</h3>
+            <p><strong>List all planets:</strong> <code>{% url 'planet-list' %}</code></p>
+            <p><strong>Retrieve a planet:</strong> <code>{% url 'planet-detail' pk=1 %}</code></p>
+            <a href="{% url 'planet-list' %}" target="_blank" class="api-link">🔗 Open Planets</a>
+        </div>
+
+        <!-- Moons -->
+        <div class="endpoint">
+            <h3>🌙 Moons</h3>
+            <p><strong>List all moons:</strong> <code>{% url 'moon-list' %}</code></p>
+            <p><strong>Retrieve a moon:</strong> <code>{% url 'moon-detail' pk=1 %}</code></p>
+            <a href="{% url 'moon-list' %}" target="_blank" class="api-link">🔗 Open Moons</a>
+        </div>
+
+        <!-- Space Stations -->
+        <div class="endpoint">
+            <h3>🛰 Space Stations</h3>
+            <p><strong>List all space stations:</strong> <code>{% url 'spacestation-list' %}</code></p>
+            <p><strong>Retrieve a space station:</strong> <code>{% url 'spacestation-detail' pk=1 %}</code></p>
+            <a href="{% url 'spacestation-list' %}" target="_blank" class="api-link">🔗 Open Space Stations</a>
+        </div>
+
+        <!-- Asteroids -->
+        <div class="endpoint">
+            <h3>☄ Asteroids</h3>
+            <p><strong>List all asteroids:</strong> <code>{% url 'asteroid-list' %}</code></p>
+            <p><strong>Retrieve an asteroid:</strong> <code>{% url 'asteroid-detail' pk=1 %}</code></p>
+            <a href="{% url 'asteroid-list' %}" target="_blank" class="api-link">🔗 Open Asteroids</a>
+        </div>
+
+        <!-- Nebulas -->
+        <div class="endpoint">
+            <h3>🌫 Nebulas</h3>
+            <p><strong>List all nebulas:</strong> <code>{% url 'nebula-list' %}</code></p>
+            <p><strong>Retrieve a nebula:</strong> <code>{% url 'nebula-detail' pk=1 %}</code></p>
+            <a href="{% url 'nebula-list' %}" target="_blank" class="api-link">🔗 Open Nebulas</a>
+        </div>
+
+        <!-- Unknown Objects -->
+        <div class="endpoint">
+            <h3>🛸 Unknown Objects</h3>
+            <p><strong>List all unknown objects:</strong> <code>{% url 'unknownobject-list' %}</code></p>
+            <p><strong>Retrieve an unknown object:</strong> <code>{% url 'unknownobject-detail' pk=1 %}</code></p>
+            <a href="{% url 'unknownobject-list' %}" target="_blank" class="api-link">🔗 Open Unknown Objects</a>
+        </div>
+    </div>
+
+    <h2>🚀 Full API Browser</h2>
+    <a href="{% url 'api-root' %}" class="api-browser-link">🌍 Open API Explorer</a>
 {% endblock %}

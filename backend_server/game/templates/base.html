@@ -1,35 +1,35 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}API Overview{% endblock %}</title>
-    <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
-        h1 { color: #007bff; }
-        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
-        .endpoint { margin-bottom: 20px; }
-        nav { margin-bottom: 20px; }
-        nav a { margin-right: 15px; text-decoration: none; color: #007bff; font-weight: bold; }
-    </style>
+    <title>{% block title %}Scifi RPG API{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/api_overview_style.css' %}">
 </head>
 <body>
 
-    <nav>
-        <a href="{% url 'items_api_overview' %}">Items API</a>
-        <a href="{% url 'npc_api_overview' %}">NPC API</a>
-        <a href="{% url 'player_api_overview' %}">Player API</a>
-        <a href="{% url 'space_api_overview' %}">Space API</a>
-        <a href="{% url 'ship_api_overview' %}">Ship API</a>
-        <a href="{% url 'diplomation_api_overview' %}">Diplomation API</a>
+    <nav class="navbar">
+        <a href="{% url 'items_api_overview' %}">🛠 Items API</a>
+        <a href="{% url 'npc_api_overview' %}">🧑‍🚀 NPC API</a>
+        <a href="{% url 'player_api_overview' %}">🎮 Player API</a>
+        <a href="{% url 'space_api_overview' %}">🌌 Space API</a>
+        <a href="{% url 'ship_api_overview' %}">🚀 Ship API</a>
+        <a href="{% url 'diplomation_api_overview' %}">⚖️ Diplomation API</a>
+        <a href="">💰 Economy API</a>
+        <a href="">🔬 Research API</a>
     </nav>
 
-    <h1>{% block heading %}API Overview{% endblock %}</h1>
+    <main class="container">
+        <h1 class="title">{% block heading %}API Overview{% endblock %}</h1>
+        {% block content %}{% endblock %}
+    </main>
 
-    {% block content %}{% endblock %}
+    <footer class="footer">
+        &copy;2025 Zdenko Čepan | Scifi RPG API | Powered by Django REST Framework
+    </footer>
 
-<footer>
-    &copy;2025 Zdenko Čepan
-</footer>
 </body>
 </html>
